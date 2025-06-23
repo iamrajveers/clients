@@ -5,7 +5,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/logo.png";
-import OrderModal from "./OrderModal"; // Reusable modal
+import OrderModal from "./OrderModal";
 
 const menus = [
   { label: "Home", href: "/" },
@@ -26,6 +26,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname();
+
 
   return (
     <>
@@ -51,11 +52,10 @@ const Navbar = () => {
               <li key={i} className="relative group">
                 <Link
                   href={menu.href}
-                  className={`relative px-5 py-[10px] rounded-[4px] transition-all duration-300 ${
-                    pathname === menu.href
-                      ? "bg-[#FB5704] text-white font-semibold "
-                      : "text-[#212025] hover:bg-[#FB5704] hover:text-white "
-                  }`}
+                  className={`relative px-5 py-[10px] rounded-[4px] transition-all duration-300 ${pathname === menu.href
+                    ? "bg-[#FB5704] text-white font-semibold "
+                    : "text-[#212025] hover:bg-[#FB5704] hover:text-white "
+                    }`}
                 >
                   {menu.label}
                 </Link>
@@ -67,11 +67,10 @@ const Navbar = () => {
                       <li key={j}>
                         <Link
                           href={child.href}
-                          className={`block px-4 py-2 text-sm rounded-md transition-all duration-200 ${
-                            pathname === child.href
-                              ? "bg-[#FB5704] text-white font-semibold"
-                              : "text-gray-700 hover:bg-[#FB5704] hover:text-white"
-                          }`}
+                          className={`block px-4 py-2 text-sm rounded-md transition-all duration-200 ${pathname === child.href
+                            ? "bg-[#FB5704] text-white font-semibold"
+                            : "text-gray-700 hover:bg-[#FB5704] hover:text-white"
+                            }`}
                         >
                           {child.label}
                         </Link>
@@ -86,7 +85,7 @@ const Navbar = () => {
           {/* Desktop Order Button */}
           <button
             onClick={() => setIsModalOpen(true)}
-            className="relative px-8 py-3 rounded-md overflow-hidden group border border-[#FB5704] hover:border-[#FB5704] transition-all duration-300"
+            className="relative px-8 py-3 rounded-md overflow-hidden group border border-[#FB5704] hover:border-[#FB5704] transition-all duration-300 hover:cursor-pointer"
           >
             <span className="absolute inset-0 bg-[#FB5704] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
             <span className="relative z-10 flex items-center gap-2">
@@ -112,8 +111,6 @@ const Navbar = () => {
           </button>
         </div>
 
-
-
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button
@@ -130,13 +127,14 @@ const Navbar = () => {
         </div>
 
 
-
         {/* Order Modal */}
+
         <OrderModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       </nav>
 
       {/* Mobile Menu */}
+
       {isOpen && (
         <div className="md:hidden fixed inset-0 bg-white z-50 pt-20 px-6 flex flex-col overflow-y-auto">
           <div className="space-y-6">
@@ -144,11 +142,10 @@ const Navbar = () => {
               <div key={i} className="border-b border-gray-100 pb-2">
                 <Link
                   href={menu.href}
-                  className={`block py-3 px-4 rounded-md text-lg font-medium transition-colors ${
-                    pathname === menu.href
-                      ? "bg-[#FB5704] text-white font-semibold shadow"
-                      : "text-gray-700 hover:bg-[#FB5704] hover:text-white"
-                  }`}
+                  className={`block py-3 px-4 rounded-md text-lg font-medium transition-colors ${pathname === menu.href
+                    ? "bg-[#FB5704] text-white font-semibold shadow"
+                    : "text-gray-700 hover:bg-[#FB5704] hover:text-white"
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {menu.label}
@@ -161,11 +158,10 @@ const Navbar = () => {
                       <Link
                         key={j}
                         href={child.href}
-                        className={`block py-2 px-4 text-base rounded-md transition-colors ${
-                          pathname === child.href
-                            ? "bg-[#FB5704] text-white font-semibold"
-                            : "text-gray-600 hover:bg-[#FB5704] hover:text-white"
-                        }`}
+                        className={`block py-2 px-4 text-base rounded-md transition-colors ${pathname === child.href
+                          ? "bg-[#FB5704] text-white font-semibold"
+                          : "text-gray-600 hover:bg-[#FB5704] hover:text-white"
+                          }`}
                         onClick={() => setIsOpen(false)}
                       >
                         {child.label}
@@ -177,10 +173,10 @@ const Navbar = () => {
             ))}
           </div>
 
-
           {/* Mobile Order Button */}
+
           <button
-            className="mt-8 bg-[#FB5704] text-white px-6 py-3 rounded-md hover:bg-[#e24d00] transition-colors self-center flex items-center gap-2 justify-center"
+            className="mt-8 bg-[#FB5704] text-white px-6 py-3 rounded-md hover:bg-[#e24d00] transition-colors self-center flex items-center gap-2 justify-center  hover:cursor-pointer"
             onClick={() => {
               setIsModalOpen(true);
               setIsOpen(false);
@@ -204,11 +200,8 @@ const Navbar = () => {
             </svg>
           </button>
 
-          
         </div>
       )}
-
-
 
 
     </>
@@ -216,3 +209,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+

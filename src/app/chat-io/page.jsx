@@ -14,14 +14,12 @@ function Home() {
   // const newsocket=useMemo(()=> io('http://localhost:5000'),[]);
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000', {
+    const newSocket = io("http://10.144.73.68:5000" || 'http://localhost:5000', {
       transports: ['websocket'],
       withCredentials: true,
     });
 
-
     setSocket(newSocket);
-
     newSocket.on('connect', () => {
       setSocketId(newSocket.id);
       setConnected(true);
@@ -61,7 +59,6 @@ function Home() {
       setMessage('');
     }
   };
-
 
   return (
     <div className="p-4 space-y-4">

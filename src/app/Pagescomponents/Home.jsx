@@ -14,26 +14,35 @@ const Home = () => {
 
     const [isLoading, setIsLoading] = useState(true);
 
+    // Timer
     useEffect(() => {
-
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 1000);
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, []);
 
+
     return (
-        <Loader loading={isLoading}>
-            <Herosection />
-            <Aboutsection />
-            <TabSection />
-            <AboutOurRestaurant />
-            <Bookatablesection />
-            <Ourservicessection />
-            <AboutResturentSection />
-            <BlogSection />
-        </Loader>
+         
+  <> 
+    
+          <TabSection />  </>
+    
+
+
+
+        // <Loader loading={isLoading}>
+        //     <Herosection />
+        //     <Aboutsection />
+        //     <TabSection />
+        //     <AboutOurRestaurant />
+        //     <Bookatablesection />
+        //     <Ourservicessection />
+        //     <AboutResturentSection />
+        //     <BlogSection />
+        // </Loader>
     );
 };
 

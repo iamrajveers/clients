@@ -58,30 +58,35 @@ const TabSection = () => {
                 description: "Triple-decker with fries",
                 image: "https://images.unsplash.com/photo-1514516340301-1eea02233d2f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
             },
+
             {
                 name: "Beef Burger",
                 price: "$14.50",
                 description: "Angus beef with cheese",
                 image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
             },
+
             {
                 name: "Caesar Salad",
                 price: "$10.75",
                 description: "Classic with chicken",
                 image: "https://images.unsplash.com/photo-1546793665-c74683f339c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
             },
+
             {
                 name: "Margherita Pizza",
                 price: "$15.25",
                 description: "Fresh basil and mozzarella",
                 image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
             },
+
             {
                 name: "Chicken Wrap",
                 price: "$11.99",
                 description: "Grilled chicken with veggies",
                 image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
             },
+
             {
                 name: "Falafel Bowl",
                 price: "$13.25",
@@ -191,8 +196,8 @@ const TabSection = () => {
                             key={tab.key}
                             onClick={() => setActiveTab(tab.key)}
                             className={`px-5 py-2 rounded-md font-medium transition-all duration-200 ${activeTab === tab.key
-                                    ? "bg-orange-500 text-white border border-orange-500"
-                                    : "bg-white text-gray-800 border border-gray-300 hover:bg-orange-500 hover:text-white hover:border-orange-500"
+                                ? "bg-orange-500 text-white border border-orange-500"
+                                : "bg-white text-gray-800 border border-gray-300 hover:bg-orange-500 hover:text-white hover:border-orange-500"
                                 }`}
                         >
                             {tab.label}
@@ -241,7 +246,7 @@ const TabSection = () => {
                     ))}
 
                 </div>
-      
+
             </div>
 
         </section>

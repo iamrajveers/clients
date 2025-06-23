@@ -1,9 +1,9 @@
 
+"use client"
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import loaderSvg from '../../../public/logo.svg';
-
 
 function Loader({ loading = false, children }) {
   if (!loading) {
@@ -19,7 +19,7 @@ function Loader({ loading = false, children }) {
     >
       <div className="relative flex items-center justify-center">
         <motion.div
-          className="w-28 h-28 border-[4px] bg-white border-gray-300 border-t-yellow-500 rounded-full"
+          className="w-28 h-28 border-[4px] bg-white border-gray-300 border-t-[#FB5704] rounded-full"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, ease: 'linear', duration: 1 }}
         />
